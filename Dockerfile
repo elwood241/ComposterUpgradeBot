@@ -4,8 +4,7 @@ WORKDIR /opt
 COPY . .
 
 
-RUN pip install --no-cache-dir -r requirements.txt && \
-    pip install --no-cache-dir requests && \
+RUN pip install --no-cache-dir -r requirements.txt --break-system-packages && \
     apt-get update && \
     apt-get autoremove -y && \
     apt-get clean && \
