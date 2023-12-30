@@ -8,4 +8,4 @@ docker rm composterbot
 git pull
 
 docker build -t composterbot .
-docker run --restart always -d --name composterbot composterbot
+docker run --restart unless-stopped -d --name composterbot composterbot
