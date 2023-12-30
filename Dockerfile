@@ -10,6 +10,6 @@ RUN pip install --no-cache-dir -r requirements.txt --break-system-packages && \
     apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    chmod +x ./extensions/restart_bot.sh
+    chmod +x ./restart_bot.sh
 
 CMD ["python", "./main.py"]
