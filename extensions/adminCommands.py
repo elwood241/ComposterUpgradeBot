@@ -38,7 +38,11 @@ class adminCog(commands.Cog):
             return
         await ctx.send("Restarting Bot")
         os.system("./restart_bot.sh")
-        exit()
+        try:
+            exit()
+        except SystemExit:
+            print("Error but irrelevant bc catched")
+            pass
         
         
         
