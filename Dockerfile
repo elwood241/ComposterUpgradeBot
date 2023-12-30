@@ -6,6 +6,7 @@ COPY . .
 
 RUN pip install --no-cache-dir -r requirements.txt && \
     pip install --no-cache-dir requests && \
+    pip install --no-cache-dir mysql.connector && \
     apt-get update && \
     apt-get autoremove -y && \
     apt-get clean && \
