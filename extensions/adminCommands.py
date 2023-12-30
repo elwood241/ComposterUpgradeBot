@@ -38,7 +38,7 @@ class adminCog(commands.Cog):
             return
         await ctx.send("Restarting Bot")
         os.system("./restart_bot.sh")
-        quit()
+        exit()
         
         
         
