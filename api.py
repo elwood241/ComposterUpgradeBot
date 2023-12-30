@@ -11,11 +11,11 @@ config = dotenv_values(".env")
 
 def connectdb():
     db = mysql.connector.connect(
-    host=config["IP"],
-    port=config["PORT"],
-    user=config["USER"],
-    passwd=config["PASSWORD"],
-    database=config["DBNAME"],
+    host=config.get("IP"),
+    port=config.get("PORT"),
+    user=config.get("USER"),
+    passwd=config.get("PASSWORD"),
+    database=config.get("DBNAME"),
     )
     return db
 

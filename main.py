@@ -70,4 +70,4 @@ if __name__ == "__main__":
     
 
     
-bot.run(config["TOKEN"])
+bot.run(config.get("TOKEN"))
