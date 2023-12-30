@@ -1,7 +1,7 @@
 FROM python:3.12.1-bullseye
 
 WORKDIR /opt
-COPY main.py requirements.txt ./
+COPY . .
 
 
 RUN pip install --no-cache-dir -r requirements.txt --break-system-packages && \
