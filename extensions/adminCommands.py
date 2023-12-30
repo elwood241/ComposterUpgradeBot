@@ -40,15 +40,6 @@ class adminCog(commands.Cog):
         os.system("./restart_bot.sh")
         quit()
         
-    @commands.command()
-    async def pull(self, ctx) -> None:
-        """Pulls updates from GitHub and restarts the Bot"""
-        if ctx.author.id not in admins:
-            await ctx.send("You are not allowed to execute this")
-            return
-        await ctx.send("Pulling changes from Repo\nI will be back online in about one minute.")
-        os.system("./gitpull.sh")
-        quit()
         
         
         

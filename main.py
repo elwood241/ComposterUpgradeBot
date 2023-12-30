@@ -48,8 +48,6 @@ async def on_ready():
 
 
 
-
-
 async def loadextension(extensionname):
     extensionname = f"extensions.{extensionname}"
     try:
