@@ -37,7 +37,7 @@ class adminCog(commands.Cog):
             await ctx.send("You are not allowed to execute this")
             return
         await ctx.send("Restarting Bot")
-        os.system("/restart_bot.sh")
+        os.system("./extensions/restart_bot.sh")
         try:
             exit()
         except SystemExit:
