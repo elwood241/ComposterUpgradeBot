@@ -1,4 +1,7 @@
 import mysql.connector
+import requests as rq
+from enum import Enum
+import json
 import os
 from dotenv import dotenv_values
 config = dotenv_values(".env")
@@ -384,3 +387,37 @@ def increaseOrganicMatterCap(id, copper=0, ench_cactus=0,
         cursor.execute("UPDATE OrganicMatterCap SET acquired_condensed_fermento = OrganicMatterCap.acquired_condensed_fermento + %s WHERE id = %s",(condensed_fermento, id))
         
     db.commit()
+    
+    
+    
+    
+    
+    
+class BazaarItems(Enum):
+    CROPIE = "CROPIE"
+    SQUASH = "SQUASH"
+    FERMENTO = "FERMENTO"
+    C_FERMENTO = "CONDENSED_FERMENTO"
+    E_CANE = "ENCHANTED_SUGAR_CANE"
+    E_MELON_B = "ENCHANTED_MELON_BLOCK"
+    TT_HAYBALE = "TIGHTLY_TIED_HAY_BALE"
+    HAYBALE = "HAY_BLOCK"
+    E_G_CARROT = "ENCHANTED_GOLDEN_CARROT"
+    E_BROWN_MUSHROOM = "ENCHANTED_BROWN_MUSHROOM"
+    E_BROWN_MUSHROOM_BLOCK = "ENCHANTED_HUGE_MUSHROOM_1"
+    E_RED_MUSHROOM_BLOCK = "ENCHANTED_HUGE_MUSHROOM_2"
+    MUTANT_NETHER_WART = "MUTANT_NETHER_STALK"
+    E_BAKED_POTATO = "ENCHANTED_BAKED_POTATO"
+    E_PUMPKIN = "ENCHANTED_PUMPKIN"
+    POLISHED_PUMPKIN = "POLISHED_PUMPKIN"
+    E_CACTUS = "ENCHANTED_CACTUS"
+    E_COOKIE = "ENCHANTED_COOKIE"
+    
+    
+    
+    
+def getItemPrice(id: str, amount: int):
+    data = rq.get(f"https://api.hypixel.net/v2/skyblock/bazaar").json()
+    iteminfo = data["products"][id]
+    price = round(float(iteminfo["quick_status"]["buyPrice"]) * amount, 1)
+    return price
