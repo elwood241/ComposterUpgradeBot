@@ -1,7 +1,5 @@
 #!/bin/bash
 
-@echo off
-
 docker stop composterbot
 docker rm composterbot 
 
