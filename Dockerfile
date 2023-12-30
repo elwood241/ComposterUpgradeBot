@@ -8,6 +8,7 @@ RUN pip install --no-cache-dir -r requirements.txt && \
     apt-get update && \
     apt-get autoremove -y && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
+    chmod +x ./restart_bot.sh
 
 CMD ["python", "./main.py"]
