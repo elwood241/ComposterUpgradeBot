@@ -1,9 +1,9 @@
 #!/bin/bash
 
-docker stop composterbot
-docker rm composterbot 
+/usr/bin/docker stop composterbot
+/usr/bin/docker rm composterbot 
 
-git pull
+/usr/bin/git pull
 
-docker build -t composterbot .
-docker run --restart unless-stopped -d --name composterbot composterbot
+/usr/bin/docker build -t composterbot .
+/usr/bin/docker run --restart unless-stopped -d --name composterbot composterbot
