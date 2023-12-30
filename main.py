@@ -37,7 +37,7 @@ discord_logger = logging.getLogger('discord.gateway')
 discord_logger.addFilter(DiscordWarningsFilter())
 
 # Your bot code goes here
-bot = commands.Bot("admin.", intents=discord.Intents.all(), application_id=config["APPLICATION_ID"])
+bot = commands.Bot("admin.", intents=discord.Intents.all(), application_id=(config.get("APPLICATION_ID")))
 
 @bot.event
 async def on_ready():
