@@ -1,6 +1,7 @@
 from discord.ext import commands
 from discord import app_commands
 import discord
+from numerize import numerize
 import api
 
 class TimeOut(discord.ui.View):
@@ -126,8 +127,50 @@ class ComposterUpgradesCommands(commands.Cog):
         composterOrganicMatterCap = api.getOrganicMatterCap(id)
         
         def generateProgress(name: str, acquired: int, required: int):
-            return f"\n### {name}\n`{acquired} / {required}` - `{required - acquired} missing` ({acquired / required * 100:.2f}%)" if acquired < required else f"\n### {name}\n`{acquired} / {required}` You are Done 🍪"
+            itemprice = "NO ITEM FOUND"
+            missing = (required - acquired)
+            if name == "Cropie":
+                itemprice = api.getItemPrice(api.BazaarItems.CROPIE.value, missing)
+            elif name == "Squash":
+                itemprice = api.getItemPrice(api.BazaarItems.SQUASH.value, missing)
+            elif name == "Fermento":
+                itemprice = api.getItemPrice(api.BazaarItems.FERMENTO.value, missing)
+            elif name == "Condensed Fermento":
+                itemprice = api.getItemPrice(api.BazaarItems.C_FERMENTO.value, missing)
+            elif name == "Enchanted Sugar Cane":
+                itemprice = api.getItemPrice(api.BazaarItems.E_CANE.value, missing)
+            elif name == "Enchanted Melon Block":
+                itemprice = api.getItemPrice(api.BazaarItems.E_MELON_B.value, missing)
+            elif name == "Enchanted Cactus":
+                itemprice = api.getItemPrice(api.BazaarItems.E_CACTUS.value, missing)
+            elif name == "Enchanted Cookie":
+                itemprice = api.getItemPrice(api.BazaarItems.E_COOKIE.value, missing)
+            elif name == "Enchanted Brown Mushroom":
+                itemprice = api.getItemPrice(api.BazaarItems.E_BROWN_MUSHROOM.value, missing)
+            elif name == "Mutant Nether Wart":
+                itemprice = api.getItemPrice(api.BazaarItems.MUTANT_NETHER_WART.value, missing)
+            elif name == "Enchanted Brown Mushroom Block":
+                itemprice = api.getItemPrice(api.BazaarItems.E_BROWN_MUSHROOM_BLOCK.value, missing)
+            elif name == "Enchanted Red Mushroom Block":
+                itemprice = api.getItemPrice(api.BazaarItems.E_RED_MUSHROOM_BLOCK.value, missing)
+            elif name == "Enchanted Baked Potato":
+                itemprice = api.getItemPrice(api.BazaarItems.E_BAKED_POTATO.value, missing)
+            elif name == "Enchanted Pumpkin":
+                itemprice = api.getItemPrice(api.BazaarItems.E_PUMPKIN.value, missing)
+            elif name == "Polished Pumpkin":
+                itemprice = api.getItemPrice(api.BazaarItems.POLISHED_PUMPKIN.value, missing)
+            elif name == "Enchanted Golden Carrot":
+                itemprice = api.getItemPrice(api.BazaarItems.E_G_CARROT.value, missing)
+            elif name == "Tightly Tied Haybale":
+                itemprice = api.getItemPrice(api.BazaarItems.TT_HAYBALE.value, missing)
+            elif name == "Haybale":
+                itemprice = api.getItemPrice(api.BazaarItems.HAYBALE.value, missing)
             
+            if name != "Copper":
+                return f"\n### {name}\n`{acquired} / {required}` - `{missing} missing` ({acquired / required * 100:.2f}%)\n`{numerize.numerize(itemprice)} Coins with Buy Order`" if acquired < required else f"\n### {name}\n`{acquired} / {required}` You are Done 🍪"
+            else:
+                return f"\n### {name}\n`{acquired} / {required}` - `{missing} missing` ({acquired / required * 100:.2f}%)" if acquired < required else f"\n### {name}\n`{acquired} / {required}` You are Done 🍪"
+        
         def generateProgressBar(progress):
             bar_length = 15
             filled_length = int(round(bar_length * progress))
