@@ -191,6 +191,8 @@ class ComposterUpgradesCommands(commands.Cog):
         
         def generateProgressBar(progress):
             bar_length = 15
+            if progress > 1:
+                progress = 1
             filled_length = int(round(bar_length * progress))
             green_box = '🟩'
             grey_box = '⬛'
