@@ -193,6 +193,8 @@ class ComposterUpgradesCommands(commands.Cog):
             bar_length = 15
             if progress > 1:
                 progress = 1
+            if progress < 0:
+                progress = 0
             filled_length = int(round(bar_length * progress))
             green_box = '🟩'
             grey_box = '⬛'
