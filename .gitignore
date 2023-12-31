@@ -3,3 +3,4 @@
 extensions/__pycache__/errorHandler.cpython-312.pyc
 extensions/__pycache__/composter.cpython-312.pyc
 extensions/__pycache__/adminCommands.cpython-312.pyc
+test.py

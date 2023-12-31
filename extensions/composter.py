@@ -133,9 +133,14 @@ class ComposterUpgradesCommands(commands.Cog):
                            "XI":4350, "XII":5250, "XIII":6250, "XIV":7450, "XV":8850, "XVI":10450, "XVII":12250, "XVIII":14250, "XIX": 16500, "XX":19000,
                            "XXI":21750, "XXII":24750, "XXIII":28050, "XXIV":31650, "XXV":35650}
 
-            for key, value in costPerTier:
+            lastKey = ""
+            for key in costPerTier:
+                value = costPerTier[key]
                 if copper < value:
-                    return key
+                    if lastKey == "":
+                        return "0"
+                    return lastKey
+                lastKey = key 
             return "XXV"
         
 
