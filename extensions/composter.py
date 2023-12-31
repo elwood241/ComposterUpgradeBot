@@ -127,7 +127,7 @@ class ComposterUpgradesCommands(commands.Cog):
         composterOrganicMatterCap = api.getOrganicMatterCap(id)
         
         def generateProgress(name: str, acquired: int, required: int):
-            itemprice = "NO ITEM FOUND"
+            itemprice = 0
             missing = (required - acquired)
             if name == "Cropie":
                 itemprice = api.getItemPrice(api.BazaarItems.CROPIE.value, missing)

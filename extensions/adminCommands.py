@@ -37,16 +37,16 @@ class adminCog(commands.Cog):
             await ctx.send("You are not allowed to execute this")
             return
         
-        await ctx.send("This feature doesn't work rn")
-        """
-        await ctx.send("Restarting Bot")
+        #await ctx.send("This feature doesn't work rn")
+        
+        await ctx.send("Restarting Bot\n(Back in  10 seconds)")
         os.system("/opt/ComposterUpgrades/restart_bot.sh")
         try:
             exit()
         except SystemExit:
             print("Error but irrelevant bc catched")
             pass
-        """
+        
         
         
     @commands.command()

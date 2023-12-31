@@ -1,0 +1,13 @@
+{
+  "apps": [
+    {
+      "name": "ComposterBot",
+      "script": "/opt/ComposterUpgrades/main.py",
+      "args": [""],
+      "instances": 1,
+      "wait_ready": true,
+      "autostart": false,
+      "interpreter": "/usr/bin/python3"
+    }
+  ]
+}
