@@ -39,7 +39,7 @@ class adminCog(commands.Cog):
         
         #await ctx.send("This feature doesn't work rn")
         
-        await ctx.send("Restarting Bot\n(Back in  10 seconds)")
+        await ctx.send("Restarting Bot\n### (Be Right Back)")
         os.system("/opt/ComposterUpgrades/restart_bot.sh")
         try:
             exit()
