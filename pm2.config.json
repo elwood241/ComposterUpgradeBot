@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "ComposterBot",
-      "script": "/opt/ComposterUpgrades/main.py",
+      "script": "/opt/ComposterUpgradeBot/main.py",
       "args": [""],
       "instances": 1,
       "wait_ready": true,
