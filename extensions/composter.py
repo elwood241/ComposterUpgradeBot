@@ -220,11 +220,11 @@ class ComposterUpgradesCommands(commands.Cog):
             return view
                         
         def generateSpeedValuesEmbeddescription():
+            nonlocal selectedButton
+            nonlocal composterSpeedValues
             upgradeTier = calculateUpgradeTier(composterSpeedValues[9])
 
             generatedDescription = f"# ComposterSpeed {upgradeTier}\n"
-            nonlocal selectedButton
-            nonlocal composterSpeedValues
             selectedButton = "speed"
             generatedDescription += generateProgress("Copper", composterSpeedValues[9], composterSpeedValues[1])
             generatedDescription += generateProgressBar(composterSpeedValues[9] / composterSpeedValues[1])
@@ -263,11 +263,11 @@ class ComposterUpgradesCommands(commands.Cog):
             
             
         def generateCRValuesEmbeddescription():
+            nonlocal selectedButton
+            nonlocal composterCostReductionValues
             upgradeTier = calculateUpgradeTier(composterSpeedValues[10])
 
             generatedDescription = f"# CostReduction {upgradeTier}\n"
-            nonlocal selectedButton
-            nonlocal composterCostReductionValues
             selectedButton = "reduction"
             generatedDescription += generateProgress("Copper", composterCostReductionValues[10], composterCostReductionValues[1])
             generatedDescription += generateProgressBar(composterCostReductionValues[10] / composterCostReductionValues[1])
@@ -309,11 +309,11 @@ class ComposterUpgradesCommands(commands.Cog):
             
             
         def generateFuelValuesEmbeddescription():
+            nonlocal selectedButton
+            nonlocal composterFuelCapValues
             upgradeTier = calculateUpgradeTier(composterSpeedValues[8])
 
             generatedDescription = f"# FuelCap {upgradeTier}\n"
-            nonlocal selectedButton
-            nonlocal composterFuelCapValues
             selectedButton = "fuel"
             generatedDescription += generateProgress("Copper", composterFuelCapValues[8], composterFuelCapValues[1])
             generatedDescription += generateProgressBar(composterFuelCapValues[8] / composterFuelCapValues[1])
@@ -349,11 +349,11 @@ class ComposterUpgradesCommands(commands.Cog):
             
             
         def generateMultiDropValuesEmbeddescription():
+            nonlocal selectedButton
+            nonlocal composterMultiDropValues
             upgradeTier = calculateUpgradeTier(composterSpeedValues[9])
 
             generatedDescription = f"# MultiDrop {upgradeTier}\n"
-            nonlocal selectedButton
-            nonlocal composterMultiDropValues
             selectedButton = "multidrop"
             generatedDescription += generateProgress("Copper", composterOrganicMatterCap[9], composterOrganicMatterCap[1])
             generatedDescription += generateProgressBar(composterMultiDropValues[9] / composterMultiDropValues[1])
@@ -392,11 +392,11 @@ class ComposterUpgradesCommands(commands.Cog):
             
             
         def generateOrganicMatterValuesEmbeddescription():
+            nonlocal selectedButton
+            nonlocal composterOrganicMatterCap
             upgradeTier = calculateUpgradeTier(composterSpeedValues[8])
 
             generatedDescription = f"# OrganicMatterCap {upgradeTier}\n"
-            nonlocal selectedButton
-            nonlocal composterOrganicMatterCap
             selectedButton = "organic"
             generatedDescription += generateProgress("Copper", composterOrganicMatterCap[8], composterOrganicMatterCap[1])
             generatedDescription += generateProgressBar(composterOrganicMatterCap[8] / composterOrganicMatterCap[1])
