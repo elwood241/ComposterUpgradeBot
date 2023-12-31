@@ -8,3 +8,7 @@ curl -L https://npmjs.org/install.sh | sudo sh
 sudo npm install pm2 -g
 
 pm2 start pm2.config.json
+pm2 startup
+pm2 save
+
+echo "Please reboot your server"
