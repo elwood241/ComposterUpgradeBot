@@ -269,7 +269,7 @@ class ComposterUpgradesCommands(commands.Cog):
         def generateCRValuesEmbeddescription():
             nonlocal selectedButton
             nonlocal composterCostReductionValues
-            upgradeTier = calculateUpgradeTier(composterSpeedValues[10])
+            upgradeTier = calculateUpgradeTier(composterCostReductionValues[10])
 
             generatedDescription = f"# CostReduction {upgradeTier}\n"
             selectedButton = "reduction"
@@ -315,14 +315,14 @@ class ComposterUpgradesCommands(commands.Cog):
         def generateFuelValuesEmbeddescription():
             nonlocal selectedButton
             nonlocal composterFuelCapValues
-            upgradeTier = calculateUpgradeTier(composterSpeedValues[8])
+            upgradeTier = calculateUpgradeTier(composterFuelCapValues[8])
 
             generatedDescription = f"# FuelCap {upgradeTier}\n"
             selectedButton = "fuel"
             generatedDescription += generateProgress("Copper", composterFuelCapValues[8], composterFuelCapValues[1])
             generatedDescription += generateProgressBar(composterFuelCapValues[8] / composterFuelCapValues[1])
 
-            generatedDescription += generateProgress("Enchanted Cactus", composterFuelCapValues[9], composterFuelCapValues[2])
+            generatedDescription += generateProgress("Enchanted Melon Block", composterFuelCapValues[9], composterFuelCapValues[2])
             generatedDescription += generateProgressBar(composterFuelCapValues[9] / composterFuelCapValues[2])
 
             generatedDescription += generateProgress("Enchanted Sugar Cane", composterFuelCapValues[10], composterFuelCapValues[3])
@@ -355,7 +355,7 @@ class ComposterUpgradesCommands(commands.Cog):
         def generateMultiDropValuesEmbeddescription():
             nonlocal selectedButton
             nonlocal composterMultiDropValues
-            upgradeTier = calculateUpgradeTier(composterSpeedValues[9])
+            upgradeTier = calculateUpgradeTier(composterMultiDropValues[9])
 
             generatedDescription = f"# MultiDrop {upgradeTier}\n"
             selectedButton = "multidrop"
@@ -398,7 +398,7 @@ class ComposterUpgradesCommands(commands.Cog):
         def generateOrganicMatterValuesEmbeddescription():
             nonlocal selectedButton
             nonlocal composterOrganicMatterCap
-            upgradeTier = calculateUpgradeTier(composterSpeedValues[8])
+            upgradeTier = calculateUpgradeTier(composterOrganicMatterCap[8])
 
             generatedDescription = f"# OrganicMatterCap {upgradeTier}\n"
             selectedButton = "organic"
