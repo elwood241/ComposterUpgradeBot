@@ -19,10 +19,10 @@ ids = [471036610561966111, 609454099427229736]
 class increaseValueCommands(discord.app_commands.Group):
     @app_commands.command(name="composterspeedvalue", description="Increases the Value for ComposterSpeed Table")
     async def increaseComposterSpeedValue(self, ctx, id: int=7, copper: int=0,
-                                    tighly_tied_haybale: int=0, hay_bale: int=0,
-                                    ench_golden_carrot: int=0, cropie: int=0,
-                                    squash: int=0, fermento: int=0,
-                                    condensed_fermento: int=0):
+                                        tighly_tied_haybale: int=0, hay_bale: int=0,
+                                        ench_golden_carrot: int=0, cropie: int=0,
+                                        squash: int=0, fermento: int=0,
+                                        condensed_fermento: int=0):
         await ctx.response.defer()
         if not ctx.user.id in ids:
             await ctx.followup.send("DU GERAET EINES BAUMES (Du darfst das nicht!)")
@@ -70,7 +70,7 @@ class increaseValueCommands(discord.app_commands.Group):
         await ctx.followup.send("SUCCESS")
         
         
-        
+
     @app_commands.command(name="mulitdropvalue", description="Increases the Value for MultiDrop Table")
     async def increaseMultiDropValue(self, ctx, id: int=7, copper: int=0, ench_baked_potato: int=0,
                                     ench_pumpkin: int=0, polished_pumpkin: int=0,
@@ -90,15 +90,15 @@ class increaseValueCommands(discord.app_commands.Group):
         
     @app_commands.command(name="organicmattercapvalue", description="Increases the Value for OrganicMatterCap Table")
     async def increaseOrganicMatterCapValue(self, ctx, id: int=7, copper: int=0, ench_cactus: int=0,
-                                   ench_cookie: int=0, cropie: int=0, squash: int=0,
-                                   fermento: int=0, condensed_fermento: int=0):
+                                            ench_cookie: int=0, cropie: int=0, squash: int=0,
+                                            fermento: int=0, condensed_fermento: int=0):
         await ctx.response.defer()
         if not ctx.user.id in ids:
             await ctx.followup.send("DU GERAET EINES BAUMES (Du darfst das nicht!)")
             return
         api.increaseOrganicMatterCap(id=id, copper=copper, ench_cactus=ench_cactus,
-                            ench_cookie=ench_cookie, cropie=cropie, squash=squash,
-                            fermento=fermento, condensed_fermento=condensed_fermento)
+                                    ench_cookie=ench_cookie, cropie=cropie, squash=squash,
+                                    fermento=fermento, condensed_fermento=condensed_fermento)
         await ctx.followup.send("SUCCESS")
                             
         
@@ -322,10 +322,10 @@ class ComposterUpgradesCommands(commands.Cog):
             generatedDescription += generateProgress("Copper", composterFuelCapValues[8], composterFuelCapValues[1])
             generatedDescription += generateProgressBar(composterFuelCapValues[8] / composterFuelCapValues[1])
 
-            generatedDescription += generateProgress("Enchanted Melon Block", composterFuelCapValues[9], composterFuelCapValues[2])
+            generatedDescription += generateProgress("Enchanted Sugar Cane", composterFuelCapValues[9], composterFuelCapValues[2])
             generatedDescription += generateProgressBar(composterFuelCapValues[9] / composterFuelCapValues[2])
 
-            generatedDescription += generateProgress("Enchanted Sugar Cane", composterFuelCapValues[10], composterFuelCapValues[3])
+            generatedDescription += generateProgress("Enchanted Melon Block", composterFuelCapValues[10], composterFuelCapValues[3])
             generatedDescription += generateProgressBar(composterFuelCapValues[10] / composterFuelCapValues[3])
             
             generatedDescription += generateProgress("Cropie", composterFuelCapValues[11], composterFuelCapValues[4])
