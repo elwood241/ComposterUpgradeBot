@@ -362,7 +362,7 @@ class ComposterUpgradesCommands(commands.Cog):
             generatedDescription += generateProgress("Copper", composterOrganicMatterCap[9], composterOrganicMatterCap[1])
             generatedDescription += generateProgressBar(composterMultiDropValues[9] / composterMultiDropValues[1])
             
-            generatedDescription += generateProgress("Enchanted Bake Potato", composterMultiDropValues[10], composterMultiDropValues[2])
+            generatedDescription += generateProgress("Enchanted Baked Potato", composterMultiDropValues[10], composterMultiDropValues[2])
             generatedDescription += generateProgressBar(composterMultiDropValues[10] / composterMultiDropValues[2])
             
             generatedDescription += generateProgress("Enchanted Pumpkin", composterMultiDropValues[11], composterMultiDropValues[3])
